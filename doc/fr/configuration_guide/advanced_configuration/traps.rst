@@ -360,6 +360,7 @@ Le résultat sera de la forme : Interface GigabitEthernet0/1 ( SERVEUR NAS ) lin
 *   Le champ **Type d'exécution** permet d'activer l'**Intervalle d'exécution** en définissant les conditions **Par OID racine**, **Par la combinaison OID racine et hôte** ou de désactiver cette restriction **Aucune**.
 *   Le champ **Méthode d'exécution** permet de définir si lors de la réception de plusieurs mêmes évènements (OID racine). L'exécution est soit **Séquentielle**, soit **Parallèle**.
 
+*   **Transformation du output** : (TODO)
 *************
 Les variables
 *************
@@ -385,6 +386,8 @@ Lors de l'ajout d'une règle de correspondance ou de l'exécution d'une commande
 | @HOSTADDRESS2@           | Nom DNS de l'hôte ayant envoyé le trap (si le serveur n'arrive pas à effectuer une résolution DNS inversée alors on récupère l'adresse IP |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | @SERVICEDESC@            | Nom du service                                                                                                                            |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| @SERVICENOTES@           | Champ notes du service                                                                                                                            |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | @TRAPOUTPUT@ ou @OUTPUT@ | Message envoyé par l'expéditeur du trap                                                                                                   |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+

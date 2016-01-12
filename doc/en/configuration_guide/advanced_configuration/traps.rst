@@ -337,6 +337,8 @@ The result will have the form:  Interface GigabitEthernet0/1 ( NAS Server ) link
 *       The **Execution Type** field is used to enable the Execution interval by defining the conditions by Root OID, by the Root OID and host combination or, to disable this restriction, None.
 *       The **Execution Method** field is used to define if on reception of multiple same events (Root OID). The execution is either **Sequential** or **Parallel**.
 
+*  **Output transformation** (TODO)
+
 *********
 Variables
 *********
@@ -361,6 +363,8 @@ When adding a rule of correspondence or executing a special command it is possib
 | @HOSTADDRESS2@           | DNS name of the host sending the trap (if the server fails to effect a reverse DNS resolution we retrieve the IP address)                 |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | @SERVICEDESC@            | Service name                                                                                                                              |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| @SERVICENOTES@           | Service notes                                                                                                                             |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | @TRAPOUTPUT@ ou @OUTPUT@ | Output of the traps                                                                                                                       |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
