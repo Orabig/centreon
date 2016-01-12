@@ -539,9 +539,15 @@ sub do_exec {
     # Check if a transform is needed
     if (defined($self->{trap_data}->{ref_oids}->{ $self->{current_trap_id} }->{traps_output_transform}) &&
         $self->{trap_data}->{ref_oids}->{ $self->{current_trap_id} }->{traps_output_transform} ne '') {
-        eval "\$self->{traps_global_output} =~ $self->{trap_data}->{ref_oids}->{ $self->{current_trap_id} }->{traps_output_transform};";
-        if ($@) {
-            $self->{logger}->writeLogError("Output transform not valid for " . $self->{trap_data}->{ref_oids}->{ $self->{current_trap_id} }->{traps_name});
+        {
+	        local $_;
+	        $_=$self->{traps_global_output};
+	        eval "$self->{trap_data}->{ref_oids}->{ $self->{current_trap_id} }->{traps_output_transform}";
+	        if ($@) {
+	            $self->{logger}->writeLogError("Output transform not valid for " . $self->{trap_data}->{ref_oids}->{ $self->{current_trap_id} }->{traps_name});
+	        } else {
+	            $self->{traps_global_output}=$_;
+		}
         }
     }
     
